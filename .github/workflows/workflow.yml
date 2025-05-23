@@ -1,1 +1,23 @@
-git
+name: Cypress E2E Tests
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '45 21 * * *'  # Executa toda sexta a meia noite
+  workflow_dispatch:      # Permite execução manual
+
+jobs:
+  cypress-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Rodar testes Cypress
+        run: npx cypress run --config baseUrl=https://serverest.dev
