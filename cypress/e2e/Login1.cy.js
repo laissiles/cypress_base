@@ -1,10 +1,14 @@
-describe('Pesquisa no google', () => {
+describe('Login', () => {
   beforeEach(() => {
-    cy.visit('https://br.search.yahoo.com/')
+    cy.visit('/login');
   })
 
-  it('Pesquisar a palavra Bebe reborn', () => {
-    cy.get('[name="p"]').type('Bebe reborn{enter}')
+  it('Logar no sistema com sucesso', () => {
+cy.login()
+
+
+
+
 
   })
 })
