@@ -20,4 +20,4 @@ jobs:
         run: npm ci
 
       - name: Rodar testes Cypress
-        run: npx cypress run --config baseUrl=https://serverest.dev
+        run: npx cypress run
